@@ -1,0 +1,11 @@
+.specie-title {
+    color: green;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+}
+
+.category-products {
+    background-color: aqua;
+}
