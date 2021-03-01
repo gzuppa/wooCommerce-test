@@ -17,8 +17,8 @@ Text Domain: shortcode
 
 add_shortcode( 'products_by_specie', 'prods_specie');
 function shortcode_init() {
-    function shortcode_products_by_specie( $attributes, $content = null, $tag = '' ) {
-        $att = shortcode_attributes( array(
+    function shortcode_products_by_specie( $attributes, $content = null, $tag = '' ) { //Declare function with arguments
+        $attribute = shortcode_attributes( array( //Declare the categories, subcategories and species
             'category_products' =>
                 'Cans',
                 'Bags',
@@ -38,11 +38,12 @@ function shortcode_init() {
                 'reptile',
             ), $attributes );
 
+            //Declare the attributes for the output and styling the HTML
         $output = '<div class="prods_specie" style="border:1px black solid '
-            . esc_attr( $att['specie'] ) . ';">'.'<div class="specie-title" style="background-color: green, font-size: 12px'
-            . esc_attr( $att['specie'] ) . ';"><h3 style="color: blue'
-            . esc_attr( $att['type'] ) . ';">'
-            . esc_attr( $att['category_products'] ) . '</h3></div>'.'<div class="category-products"><p>'
+            . esc_attr( $attribute['specie'] ) . ';">'.'<div class="specie-title" style="background-color: green, font-size: 12px'
+            . esc_attr( $attribute['specie'] ) . ';"><h3 style="color: blue'
+            . esc_attr( $attribute['type'] ) . ';">'
+            . esc_attr( $attribute['category_products'] ) . '</h3></div>'.'<div class="category-products"><p>'
             . esc_attr( $content ) . '</p></div>'.'</div>';
 
             return $output;
